@@ -1,9 +1,6 @@
 import time
 import os
-import pygame
-
-# Initialize pygame mixer
-pygame.mixer.init()
+import playsound
 
 # Get the countdown time from user input
 countdown_time = int(input("Enter countdown time in seconds: "))
@@ -18,7 +15,5 @@ while countdown_time:
 
 # Play alarm sound when countdown is complete
 print("Time's up!")
-pygame.mixer.music.load(os.path.abspath("alarm.mp3"))
-pygame.mixer.music.play()
-time.sleep(5)
-pygame.mixer.music.stop()
+alarm_file = os.path.abspath("alarm.mp3")
+playsound.playsound(alarm_file)
